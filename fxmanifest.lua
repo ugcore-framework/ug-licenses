@@ -12,7 +12,8 @@ server_scripts {
     '@oxmysql/lib/MySQL.lua',
     'server/main.lua',
     'server/functions.lua',
-    'server/callbacks.lua'
+    'server/callbacks.lua',
+    'server/version.lua'
 }
 
 dependencies {
