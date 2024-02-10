@@ -1,6 +1,6 @@
 local UgCore = exports['ug-core']:GetCore()
 
-UgCore.Callbacks.CreateCallback('ug-licenses:GiveLicense', function (source, license, cb)
+UgCore.Callbacks.CreateCallback('ug-licenses:GiveLicense', function (source, cb, license)
     local player = UgCore.Functions.GetPlayer(source)
     if UgDev.Functions.IsLicenseValid(license) then
         if not UgDev.Functions.CheckPlayerLicense(player, license) then
@@ -11,7 +11,7 @@ UgCore.Callbacks.CreateCallback('ug-licenses:GiveLicense', function (source, lic
     end
 end)
 
-UgCore.Callbacks.CreateCallback('ug-licenses:RemoveLicense', function (source, license, cb)
+UgCore.Callbacks.CreateCallback('ug-licenses:RemoveLicense', function (source, cb, license)
     local player = UgCore.Functions.GetPlayer(source)    
     if UgDev.Functions.IsLicenseValid(license) then
         if UgDev.Functions.CheckPlayerLicense(player, license) then
@@ -22,7 +22,7 @@ UgCore.Callbacks.CreateCallback('ug-licenses:RemoveLicense', function (source, l
     end
 end)
 
-UgCore.Callbacks.CreateCallback('ug-licenses:CheckPlayerLicense', function (source, license, cb)
+UgCore.Callbacks.CreateCallback('ug-licenses:CheckPlayerLicense', function (source, cb, license)
     local player = UgCore.Functions.GetPlayer(source)
     if UgDev.Functions.IsLicenseValid(license) then
         if UgDev.Functions.CheckPlayerLicense(player, license) then
