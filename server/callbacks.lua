@@ -34,3 +34,7 @@ UgCore.Callbacks.CreateCallback('ug-licenses:CheckPlayerLicense', function (sour
         return error('Missing license "' .. license .. '" in the licenses database!')
     end
 end)
+
+UgCore.Callbacks.CreateCallback('ug-licenses:GetPlayerLicenses', function (source, cb)
+    cb(UgDev.Functions.GetLicensesFromPlayer(source))
+end)
